@@ -3,7 +3,7 @@
 <a class="mx-1 my-1 hospital-card link" data-id="{{$hospital->id}}" style="" data-toggle="modal" data-target="#modal"> 
     <div class=" card-thumb rounded-2 px-2 pt-2 hospital-kartu  w-100">
         <div class="card-title  d-flex flex-column justify-content-between">
-            <div class="thumbnail rounded-2"  style="background-image: url('{{$hospital->img_link??asset('/assets/img/hero.jpg')}}'); background-size:cover; height:150px"></div>
+            <div class="thumbnail rounded-2"  style="background-image: url('{{$hospital->img_link??asset('/assets/img/img-default.jpg')}}'); background-size:cover; height:150px; background-position: center"></div>
             {{-- <img class="thumbnail rounded-2" height="150px" src="{{$hospital->img_link??'https://lh5.googleusercontent.com/p/AF1QipOytNqnIn4abYaiTZFr9AiYaihvbo0R69xnjSTq=w408-h306-k-no'}}"  alt=""> --}}
       
             <p class="p-bold tulisan p-dark mt-2 text-truncate">{{$hospital->name}}</p>
