@@ -16,12 +16,12 @@ class DataController extends Controller
 
             $hospitals = DB::table('hospitals')
                         ->join('provinces', 'provinces.id', '=', 'hospitals.province_id')
-                        ->select('hospitals.id','hospitals.name', 'hospitals.total_bed', 'provinces.name as province')
+                        ->select('hospitals.id','hospitals.name','hospitals.img_link', 'hospitals.total_bed', 'provinces.name as province')
                         ->where('hospitals.province_id', $id)
                         ->orderBy('hospitals.total_bed', 'desc')
                         ->paginate(15);
 
-            return view('components.hospital-card', ['hospitals'=>$hospitals])->render();
+            return view('components.hospital-card', ['hospitals'=>$hospitals]);
     }
 
     public function detailHospital(Request $request, $id){

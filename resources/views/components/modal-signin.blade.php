@@ -1,7 +1,7 @@
 <div class="px-2">
   <div class="row d-flex justify-content-between">
       <h5 class="modal-title p-bold p-dark" id="exampleModalLabel">Masuk</h5>
-      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+      <button type="button" class="close link" data-dismiss="modal" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
   </div>

@@ -70,6 +70,9 @@ body,
 .p-white {
     color: #fff !important;
 }
+.p-white-70 {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
 
 .border-white {
     border: 2px solid #fff;
@@ -124,6 +127,8 @@ body,
 }
 .thumbnail {
     width: 100%;
+    /* background-image: url("https://lh5.googleusercontent.com/p/AF1QipOytNqnIn4abYaiTZFr9AiYaihvbo0R69xnjSTq=w408-h306-k-no");
+    max-height: 150px; */
 }
 
 .card-thumb {
@@ -141,10 +146,21 @@ body,
     text-decoration: none;
 }
 
+.hospital-card {
+    min-height: 170px;
+    width: 225px;
+}
+
+/* .hospital-kartu {
+    width: 200px;
+    height: 230px;
+    background-color: white;
+} */
+
 button {
     border: none;
 }
-
+/* 
 .navbar-base {
     padding: 15px 30px;
     display: flex;
@@ -174,7 +190,7 @@ nav a:hover {
 .nav-2,
 .nav-3 {
     display: flex;
-}
+} */
 
 /* index view */
 .hero-container {
@@ -255,7 +271,8 @@ nav a:hover {
 }
 .history-body {
     overflow-x: hidden; /* Hide horizontal scrollbar */
-    overflow-y: scroll; /* Add vertical scrollbar */
+    overflow-y: scroll;
+    height: 500px; /* Add vertical scrollbar */
     scroll-behavior: smooth;
 }
 
@@ -274,4 +291,77 @@ nav a:hover {
     background-color: #616060;
     border: 2px solid #555555;
     border-radius: 1.5px;
+}
+
+/* navbarrr */
+#scanfcode {
+    border-radius: 0px;
+    background: #fff;
+    padding: 10px;
+    font-size: 17px;
+}
+/* logo or main heading */
+#logo {
+    font-size: 20px;
+    font-weight: bolder;
+    color: #00004d;
+    letter-spacing: 2px;
+}
+/* navigation links*/
+#link a {
+    color: #01325d;
+    margin: 0 20px 0 10px;
+    letter-spacing: 1.5px;
+}
+#link a:hover {
+    text-decoration: none;
+    color: rgb(223, 240, 255);
+}
+/* navigation link with right border */
+#first-link {
+    padding-right: 6px;
+    border-right: solid 1px #ccc;
+}
+/* sign up link button and toggle button */
+#button-link,
+#togle-button {
+    border-color: rgba(0, 0, 0, 0.2);
+    border-radius: 2px;
+    line-height: 17px;
+}
+
+#toggle-button:focus {
+    outline: none;
+    background-color: #ffffff50;
+}
+#button-link a {
+    color: #f2f2f2;
+}
+
+.text-tengah {
+    /* background-color: aqua; */
+    text-align: center;
+    display: block;
+    margin: auto;
+}
+/* end navbar */
+
+/* footer */
+.footer {
+    background-color: rgba(2, 47, 143, 1);
+    margin-top: 20px;
+}
+
+/* tablet */
+@media (max-width: 768px) {
+    .history-body {
+        overflow: hidden;
+        display: none;
+    }
+    .riwayat {
+        display: none;
+    }
+    .hospital-card {
+        width: 180px;
+    }
 }

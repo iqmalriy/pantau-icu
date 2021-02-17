@@ -13,9 +13,11 @@ $(document).ready(function () {
     });
 
     function getHospital(param) {
-        $("#data-hospital").html(
-            '<p class="w-100 h-100 text-center p-medium tulisan">Memuat...</p>'
-        );
+        $("#data-hospital")
+            .html(
+                '<p class="my-5 w-100 text-center d-flex justify-content-center p-medium tulisan">Memuat...</p>'
+            )
+            .removeClass("justify-content-center");
         $.ajax({
             url: `${url}/data/hospital/province/${param}/all`,
             method: "GET",

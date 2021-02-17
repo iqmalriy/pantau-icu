@@ -1,6 +1,6 @@
-$(window).resize(function () {
-    console.log($(this).width());
-});
+// $(window).resize(function () {
+//     console.log($(this).width());
+// });
 
 const count_element = $(".icu-tersedia").data("count");
 if (count_element === 1) {
@@ -43,10 +43,11 @@ let slick_setting = {
         {
             breakpoint: 480,
             settings: {
-                slidesToShow: 1,
+                slidesToShow: 2,
                 slidesToScroll: 1,
                 dots: false,
                 autoplaySpeed: 1000,
+                speed: 1000,
             },
         },
         // You can unslick at a given breakpoint now by adding:

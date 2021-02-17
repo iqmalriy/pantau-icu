@@ -2,7 +2,10 @@ $(document).ready(function () {
     let totalBed = $("#total-bed").val();
     const url = $('meta[name="url"]').attr("content");
     const csrf = $('meta[name="csrf"]').attr("content");
+    let isChecked = false;
+    let hospitalSelected = false;
 
+    //------------- counter section---------------
     $("#total-bed").on("change", function () {
         totalBed = $(this).val();
     });
@@ -26,34 +29,35 @@ $(document).ready(function () {
         totalBed > 0 ? totalBed-- : totalBed;
         $("#total-bed").val(totalBed);
     });
+    //------------- end counter section----------------
 
+    // ----------dissable button function---------------
     $("input#commitment").on("change", function () {
-        if ($(this).is(":checked")) {
+        $(this).is(":checked") ? (isChecked = true) : (isChecked = false);
+        disableButton();
+    });
+
+    $('select[name="hospital"]').on("change", function () {
+        hospitalSelected = true;
+        disableButton();
+    });
+
+    function disableButton() {
+        if (isChecked && hospitalSelected) {
             return $("#submit-update").prop("disabled", false);
         }
         return $("#submit-update").prop("disabled", true);
-    });
+    }
+    //----------- end disable button-------------
 
-    $("#submit-update").on("click", function (e) {
-        e.preventDefault();
-        $(this).prop("disable", true).text("Loading...");
-        const data = {
-            hospital_id: $('select[name="hospital"]').val(),
-            total_bed: $("#total-bed").val(),
-        };
-        return update(data);
-    });
-
-    $("#counter-umum").hide();
+    //---------- SELECT PROVINCE AND RS SECTION-----------
     $("#province-update").on("change", function () {
+        hospitalSelected = false;
+
         $(".rs-default").html(
             '<option disabled selected class="select-default rs-default">Memuat...</option>'
         );
         return getHospitals($(this).val());
-    });
-
-    $('select[name="hospital"]').on("change", function () {
-        $("#counter-umum").show();
     });
 
     function getHospitals(provinceId) {
@@ -61,17 +65,31 @@ $(document).ready(function () {
             url: `${url}/data/hospital/province/${provinceId}`,
             method: "GET",
             success: async function (data) {
+                disableButton();
                 $(".rs-default").text("Pilih RS");
                 let options = "";
                 data.map(({ id, name }) => {
                     options += `<option value="${id}">${name}</option>`;
                 });
                 return $('select[name="hospital"]').html(`
-                <option disabled selected class="select-default rs-default">Pilih RS...</option>
+                <option disabled selected class="select-default rs-default">Pilih RS</option>
                 ${options}`);
             },
         });
     }
+    //----------END SELECT PROVINCE AND RS SECTION-----------
+
+    //-------------- BUTTON SUBMIT SECTION-------------
+    $("#submit-update").on("click", function (e) {
+        e.preventDefault();
+
+        $(this).prop("disable", true).text("Memuat...");
+        const data = {
+            hospital_id: $('select[name="hospital"]').val(),
+            total_bed: $("#total-bed").val(),
+        };
+        return update(data);
+    });
 
     function update(datas) {
         return $.ajax({
@@ -90,11 +108,12 @@ $(document).ready(function () {
                         timer: 1100,
                     }).then((result) => {
                         if (result.dismiss) {
-                            // window.location.reload(true);
+                            window.location.reload(true);
                         }
                     });
                 }
             },
         });
     }
+    //--------------END  BUTTON SUBMIT SECTION-------------
 });

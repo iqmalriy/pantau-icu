@@ -13,7 +13,7 @@ class HomeController extends Controller
         $provinces = DB::table('provinces')->orderby('name','asc')->get();
         $hospitals = DB::table('hospitals')
             ->join('provinces', 'provinces.id', '=', 'hospitals.province_id')
-            ->select('hospitals.id','hospitals.name', 'provinces.name as province', 'hospitals.total_bed')
+            ->select('hospitals.id','hospitals.img_link','hospitals.name', 'provinces.name as province', 'hospitals.total_bed')
             ->orderBy('hospitals.total_bed', 'desc')
             ->paginate(10);
 

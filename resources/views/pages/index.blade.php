@@ -5,12 +5,12 @@
     <div class="col-12">
         <div class="row">
             {{-- kiri --}}
-            <div class="col-md-9 mt-3">
+            <div class="col-md-9 mt-4">
                 <div class="hero-container w-100">
                         <img class="hero-img" src="{{asset('/assets/img/hero.jpg')}}" alt="" srcset="">
                         <div class="hero-title  d-flex flex-column justify-content-center font-size-20">
-                            <h1 class="p-bold p-white hero-judul ml-5 ">BANTU SESAMA<br>MENCARIKAN <BR>RUANG ICU</h1>
-                            <button class="btn-no-border cards text-center p-white bg-white-70 col-sm-3 col-6 ml-5 rounded-100 py-2 px-3 p-bold link " id="update-icu"  data-toggle="modal" data-target="#modal" style="cursor: pointer">Update ICU <i class="fa fa-plus"></i> </button>
+                            <h1 class="p-bold p-white hero-judul col-md-5 ml-2 ml-md-4 text-wrap">BANTU SESAMA MENCARIKAN RUANG ICU</h1>
+                            <button class="btn-no-border cards text-center p-white bg-white-70 col-sm-3 col-6 ml-3 ml-md-5 rounded-100 py-2 px-3 p-bold link " id="update-icu"  data-toggle="modal" data-target="#modal" style="cursor: pointer">Update ICU <i class="fa fa-plus"></i> </button>
                         </div>
                 </div>
                 <div class="sliderr">
@@ -35,10 +35,10 @@
                 </div>
             </div>
             {{-- kanan --}}
-            <div class="col-md-3 mt-3">
-                <div class=" d-flex  flex-column col-12 w-100 h-100 px-3 py-2" >
-                    <h5 class="p-bold judul p-soft text-center">Riwayat Update ICU <hr></h5>
-                    <div class="history-body w-100" style="height: 500px">
+            <div class="col-md-3 mt-md-3">
+                <div class=" d-flex flex-column col-12 w-100 h-100 px-3 py-2" >
+                    <h5 class="p-bold judul p-soft riwayat text-center">Riwayat Update ICU <hr></h5>
+                    <div class="history-body w-100">
                         @foreach ($histories as $history)
                             
                         <span class="history d-flex col-12">
@@ -56,7 +56,6 @@
                         @endforeach
                         
                     </div>
-                    
                 </div>
             </div>
         </div>
@@ -73,10 +72,10 @@
         </div>
         <div class="hospital-list">
             <div class="col-12 " >
-                    <div class="row d-flex " id="data-hospital" style="min-height: 440px">
+                    <div class="row d-flex  justify-content-center " id="data-hospital" style="min-height: 440px">
                         @include('components.hospital-card')
                     </div>
-                    <div class="mt-3 row  d-flex justify-content-end button-page" id="">
+                    <div class="mt-3 row  d-flex justify-content-center button-page" id="">
                         {{ $hospitals->onEachSide(1)->links() }}
                     </div>
             </div>
