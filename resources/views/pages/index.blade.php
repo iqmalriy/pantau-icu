@@ -71,8 +71,8 @@
             </select>
         </div>
         <div class="hospital-list">
-            <div class="col-12 " >
-                    <div class="row d-flex  justify-content-center " id="data-hospital" style="min-height: 440px">
+            <div class="col-12 mb-5 " >
+                    <div class="row d-flex  justify-content-center " id="data-hospital" style="min-height: 250px">
                         @include('components.hospital-card')
                     </div>
                     <div class="mt-3 row  d-flex justify-content-center button-page" id="">
