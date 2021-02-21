@@ -6,6 +6,7 @@
     <meta name="csrf" content="{{csrf_token()}}">
     <meta name='url' content="{{url('/')}}">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="{{asset('/assets/img/logo.svg')}}" type="image/x-icon">
     <link rel="stylesheet" href="{{asset('/assets/css/pages.css')}}">
     <link rel="stylesheet" href="{{asset('/vendor/bootstrap/css/bootstrap.min.css')}}" >
     <link href="{{asset('/vendor/fontawesome-free/css/all.min.css')}}" rel="stylesheet" type="text/css">

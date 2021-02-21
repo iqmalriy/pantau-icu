@@ -18,7 +18,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index']);
 
-Route::get('/scraper',[ScraperController::class, 'index']);
+// Route::get('/scraper',[ScraperController::class, 'index']);
 //auth section
 Route::post('/user-signin', [AuthController::class, 'signin']);
 Route::post('/user-signup', [AuthController::class, 'signup']);

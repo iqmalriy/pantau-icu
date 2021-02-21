@@ -3,7 +3,7 @@ $(document).ready(function () {
     const url = $('meta[name="url"]').attr("content");
     const csrf = $('meta[name="csrf"]').attr("content");
     let isChecked = false;
-    let hospitalSelected = false;
+    let hospitalSelected = true;
 
     //------------- counter section---------------
     $("#total-bed").on("change", function () {

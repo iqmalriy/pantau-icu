@@ -10,7 +10,7 @@
                     <div class="form-group hospital-group w-100">
                         <label for="hospital" class="p-medium p-soft">RS Tempat Kerja</label>
                         <select class="js-example-basic-single form-control" readonly name="hospital">
-                          <option disabled selected value="{{$hospital->id}}" class="select-default rs-default">{{$hospital->name}}</option>
+                          <option selected value="{{$hospital->id}}" class="select-default rs-default">{{$hospital->name}}</option>
                         </select>
                     </div>
                     <label for="counter" class="p-medium p-soft">Total Bed</label>
